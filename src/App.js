@@ -5,6 +5,7 @@ import * as jsonUtil from "./util.js";
 import "./App.css";
 import Player from "./components/Player";
 import Header from "./components/Header";
+import LeftPanel from "./components/LeftPanel";
 
 function App() {
   const albums = jsonUtil.getAllAlbums(data);
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <LeftPanel />
       {albums.map((album, i) => (
         <Album key={i} name={album} />
       ))}

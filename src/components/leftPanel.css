@@ -1,0 +1,27 @@
+.left-panel {
+    width: 300px;
+    background-color: burlywood;
+    height: 100vh;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    background-image: url('./Images/burlap.jpeg');
+    background-size: 20px;
+    border-right: blue solid 5px;
+}
+
+.panel-section {
+    color: white;
+    font-family: Apple Chancery, cursive;
+    font-weight: bold;
+    width: 80%;
+    background-color: none;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    cursor: pointer;
+    width: fit-content;
+}

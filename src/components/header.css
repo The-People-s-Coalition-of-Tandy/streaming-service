@@ -1,19 +1,10 @@
-
-
-div{
-    /* background-image: linear-gradient(to right top, #003179, #4c548e, #7b7aa3, #a5a3b9, #cfcfcf); */
-    /* background-color: #330092; */
-    /* background-repeat: repeat; */
-
-}
-
 header{
 
     font-family: TomAndJerry;
     font-size: 2rem;
     color: gainsboro;
     background-image: url("./Images/wood1.png");
-
+    border-bottom: 5px blue solids ;
 }
 
 .flex{
