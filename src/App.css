@@ -2,8 +2,9 @@
   text-align: center;
 }
 
-html, body {
-  overflow-y: hidden;
+html,
+body {
+  /* overflow-y: hidden; */
 }
 
 .App-logo {
@@ -34,9 +35,11 @@ html, body {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(0px);
   }
