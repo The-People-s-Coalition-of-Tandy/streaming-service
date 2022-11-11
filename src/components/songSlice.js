@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const songSlice = createSlice({
-  name: 'currentSong',
+  name: "currentSong",
   initialState: {
     value: "",
   },
@@ -11,14 +11,13 @@ export const songSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.value = action.payload
+      state.value = action.payload;
     },
   },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const { update } = songSlice.actions
+export const { update } = songSlice.actions;
 export const selectSong = (state) => state.currentSong.value;
 
-
-export default songSlice.reducer
+export default songSlice.reducer;
