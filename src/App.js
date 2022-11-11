@@ -4,6 +4,7 @@ import { data } from "./list.js";
 import * as jsonUtil from "./util.js";
 import "./App.css";
 import Player from "./components/Player";
+import Header from "./components/Header";
 
 function App() {
   const albums = jsonUtil.getAllAlbums(data);
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>BLUE DISH Soothing Music</header>
+      <Header />
       {albums.map((album, i) => (
         <Album key={i} name={album} />
       ))}

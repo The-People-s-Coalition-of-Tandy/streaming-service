@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { update, selectSong } from "./songSlice";
+import "./player.css";
 
 function Player() {
   const currentSong = useSelector(selectSong);
@@ -11,8 +12,13 @@ function Player() {
   }, [currentSong]);
 
   return (
-    <div>
-      <audio src={playing.url} controls={true} autoPlay={true}></audio>
+    <div className="wrapper">
+      <audio
+        className="player"
+        src={playing.url}
+        controls={true}
+        autoPlay={true}
+      ></audio>
     </div>
   );
 }
