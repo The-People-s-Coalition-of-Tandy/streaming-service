@@ -68,7 +68,7 @@
 
 .albumCover{
     border: 5px groove lightskyblue;
-    filter: drop-shadow(0 0 0.75rem whitesmoke);
+    filter: drop-shadow(0 0 0.75rem rgb(8, 0, 97));
 
 }
 

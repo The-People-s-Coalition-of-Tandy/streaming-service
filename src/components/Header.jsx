@@ -11,7 +11,7 @@ function Header(){
     return  <header>
                 <div className='flex'>        
                     <div className='blueDish'>BLUE<br/>DISH</div>
-                    <div>Soothing<br/>Music</div>
+                    <div className='soothingMusic'>Soothing<br/>Music</div>
             </div>
      </header>    
 

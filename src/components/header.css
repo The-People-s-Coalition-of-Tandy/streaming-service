@@ -10,14 +10,22 @@ div{
 header{
 
     font-family: TomAndJerry;
-    font-size: 2rem;
-    color: gainsboro;
+    font-size: 1.75rem;
+    color: rgb(67, 37, 0);
     background-image: url("./Images/wood1.png");
+    text-align: left;
+    padding: 2rem;
+    -webkit-text-stroke: .75px whitesmoke; /* width and color */
 
 }
 
 .flex{
     display: flex;
+    gap: 1rem;
 }
 
-
+.soothingMusic{
+    position: relative;
+    top: -10px;
+    right: -10px;
+}
