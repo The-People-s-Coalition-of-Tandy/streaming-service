@@ -1,13 +1,12 @@
-
 @font-face {
     font-family: AG5;
     src: url(/public/Media/Fonts/AG5.ttf);
-  }
+}
 
 @font-face {
     font-family: icons;
     src: url(/public/Media/Fonts/IconQuadPix.ttf);
-  }
+}
 
 @font-face {
     font-family: darling;
@@ -60,19 +59,41 @@
 }
 
 
-.albumName{
+.albumName {
     font-size: 3.5rem;
     font-family: Romantic;
     color: silver;
+    /* margin: auto; */
 }
 
-.albumCover{
+.albumCover {
     border: 5px groove lightskyblue;
-    filter: drop-shadow(0 0 0.75rem rgb(8, 0, 97));
+    /* filter: drop-shadow(0 0 0.75rem rgb(8, 0, 97)); */
+    filter: drop-shadow(0 0 0.75rem whitesmoke);
+    margin-bottom: 2ch;
 
 }
 
-/* .bgColor{
-        background-color: #330092;
+.flexWrap {
+    margin: auto;
+    width: 32ch;
+    align: left;
+    position: relative;
+    /* left: 3ch; */
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 1ch;
+    align-items: center;
+}
 
-} */
+.songsFlex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin: 1ch;
+}

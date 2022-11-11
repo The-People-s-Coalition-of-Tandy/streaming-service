@@ -7,7 +7,7 @@ function Song({ songData }) {
   const dispatch = useDispatch();
 
   return (
-    <div>
+  <div>
       <button onClick={() => dispatch(update(songData))}>{title}</button>
     </div>
   );

@@ -1,15 +1,17 @@
 .left-panel {
-    width: 300px;
+    /* width: 200px; */
     background-color: burlywood;
     height: 100vh;
     float: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     padding-top: 40px;
-    background-image: url('./Images/burlap.jpeg');
-    background-size: 20px;
+    background-image: url('./Images/burlap.png');
+    background-size: 70px;
     border-right: blue solid 5px;
+    min-width: 115px;
+    width: 18%;
 }
 
 .panel-section {
@@ -21,6 +23,7 @@
     border: none;
     background: none;
     font-size: 2rem;
+    margin-left: 1px;
     margin-bottom: 40px;
     cursor: pointer;
     width: fit-content;

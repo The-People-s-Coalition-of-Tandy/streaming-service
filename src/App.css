@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: darkgray;
+  background-image: url("components/Images/crinklepaper.png");
 }
 
 html,
@@ -43,4 +45,18 @@ body {
   100% {
     transform: translateY(0px);
   }
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  /* flex-basis: 100%; */
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 1ch;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  position: relative;
+  min-width: 237px;
 }

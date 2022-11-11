@@ -16,9 +16,11 @@ function App() {
     <div className="App">
       <Header />
       <LeftPanel />
+      <div className="columns">
       {albums.map((album, i) => (
         <Album key={i} name={album} />
       ))}
+      </div>
       <Player />
     </div>
   );
