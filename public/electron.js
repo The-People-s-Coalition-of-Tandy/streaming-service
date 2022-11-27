@@ -1,13 +1,12 @@
 const path = require("path");
 const url = require("url");
 
-let mainWindow;
-
 const { app, BrowserWindow } = require("electron");
 // const isDev = require("electron-is-dev");
 
 function createWindow() {
   // Create the browser window.
+
   const win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -15,16 +14,16 @@ function createWindow() {
       nodeIntegration: true,
     },
   });
-
   // and load the index.html of the app.
   // win.loadFile("index.html");
-  mainWindow.loadURL(
+  win.loadURL(
     url.format({
       pathname: path.join(__dirname, "index.html"),
       protocol: "file:",
       slashes: true,
     })
   );
+
   // Open the DevTools.
   if (isDev) {
     win.webContents.openDevTools({

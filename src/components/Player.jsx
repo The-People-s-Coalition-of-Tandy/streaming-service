@@ -50,6 +50,17 @@ function Player() {
 
   return (
     <footer className="wrapper">
+      {songSelected && (
+        <div style={{ display: "flex" }}>
+          {" "}
+          <img
+            width={50}
+            height={50}
+            src={`./Media/Music/${songSelected.artist}/${songSelected.album}/cover.jpeg`}
+          />{" "}
+          <h4>Now Playing: {songSelected.title}</h4>
+        </div>
+      )}
       <button onClick={play}>{playing ? <p>Pause</p> : <p>Play</p>}</button>
       <audio
         className="player"
