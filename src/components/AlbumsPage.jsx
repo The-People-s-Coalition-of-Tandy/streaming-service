@@ -8,21 +8,6 @@ function AlbumsPage({ albums }) {
       {albums.map((album, i) => (
         <Album key={i} name={album} />
       ))}
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
     </>
   );
 }
