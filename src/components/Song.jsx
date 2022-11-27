@@ -12,8 +12,9 @@ function Song({ songData }) {
   }, []);
 
   return (
-    <div>
-      <button onClick={() => dispatch(update(songData))}>{title}</button>
+    <div className="flexbox">
+      <button onClick={() => dispatch(update(songData))}>&gt;</button>
+      <span>{title}</span>
     </div>
   );
 }

@@ -34,3 +34,14 @@ export const data = [
     url: "./Media/Music/Green Deck/Album 1/1.mp3",
   },
 ];
+
+export const artists = [
+  {
+    name: "BLUE DISH",
+    bio: "BLUE DISH is cool. This is a blurb about BLUE DISH",
+  },
+  {
+    name: "Green Deck",
+    bio: "Green Deck is cool. This is a blurb about Green Deck",
+  },
+];

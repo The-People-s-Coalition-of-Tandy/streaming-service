@@ -20,7 +20,6 @@ function Player() {
     if (playing) {
       audioPlayer.current.pause();
       setPlaying(false);
-      console.log(queue);
     } else {
       audioPlayer.current.play();
       setPlaying(true);
@@ -49,27 +48,43 @@ function Player() {
   }, [currentSong]);
 
   return (
-    <footer className="wrapper">
-      {songSelected && (
-        <div style={{ display: "flex" }}>
-          {" "}
-          <img
-            width={50}
-            height={50}
-            src={`./Media/Music/${songSelected.artist}/${songSelected.album}/cover.jpeg`}
-          />{" "}
-          <h4>Now Playing: {songSelected.title}</h4>
+    <footer>
+      <div className="player-left">
+        {songSelected && (
+          <div className="flexbox">
+            <img
+              width={50}
+              height={50}
+              src={`./Media/Music/${songSelected.artist}/${songSelected.album}/cover.jpeg`}
+            />
+            <div className="flexbox trackInfo">
+              <span>{songSelected.title}</span>
+              <span>{songSelected.artist}</span>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="player-center">
+        <div className="player-controls">
+          <button onClick={play}>
+            {playing ? <span>Pause</span> : <span>Play</span>}
+          </button>
+          <button onClick={playNext}>Next Song</button>
         </div>
-      )}
-      <button onClick={play}>{playing ? <p>Pause</p> : <p>Play</p>}</button>
-      <audio
-        className="player"
-        src={songSelected.url}
-        controls={true}
-        autoPlay={true}
-        ref={audioPlayer}
-        onEnded={playNext}
-      ></audio>
+        <div className="audio-timeline">
+          <audio
+            className="player"
+            src={songSelected.url}
+            controls={true}
+            autoPlay={true}
+            ref={audioPlayer}
+            onEnded={playNext}
+          ></audio>
+        </div>
+      </div>
+
+      <div className="player-right"></div>
     </footer>
   );
 }

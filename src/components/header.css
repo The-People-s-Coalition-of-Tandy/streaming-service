@@ -4,7 +4,7 @@ header {
     font-size: 1.75rem;
     color: rgb(67, 37, 0);
     background-image: url("./Images/wood2.png");
-    border-bottom: 5px blue solids;
+    border-bottom: 3px rgb(27, 27, 190) solid;
     text-align: left;
     padding: 2rem;
     -webkit-text-stroke: .75px whitesmoke;

@@ -1,10 +1,12 @@
-.wrapper {
-    /* border: 3px #000000 ridge; */
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: 12px;
+.flexbox {
+    display: flex;
 }
 
+.trackInfo {
+    flex-direction: column;
+    justify-content: center;
+}
+ 
 
 /* play button */
 audio::-webkit-media-controls-play-button {
@@ -15,10 +17,40 @@ audio::-webkit-media-controls-play-button {
 
 footer {
     flex: 0 1 40px;
-    background: lightblue;
+    background-image: url(./Images/player.gif);
+    /* background-size: 10px; */
     display: flex;
     justify-content: center;
+    border-top: 2px ridge rgb(131, 131, 131);
+    padding: 10px 20px 0px 20px;
+    color: white;
+    font-weight: bold;
   }
+
+.player-left,.player-center, .player-right {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.player-center {
+    justify-content: center;
+}
+.player-left {
+    justify-content: flex-start;
+}
+
+.player-left img {
+    margin: auto;
+}
+.player-center {
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.player-controls {
+
+}
 
 audio::-webkit-media-controls-mute-button,
 
