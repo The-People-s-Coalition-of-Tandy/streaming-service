@@ -1,7 +1,6 @@
 .left-panel {
     /* width: 200px; */
     background-color: burlywood;
-    height: 100vh;
     float: left;
     display: flex;
     flex-direction: column;

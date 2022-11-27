@@ -12,3 +12,16 @@ audio::-webkit-media-controls-play-button {
     color: aquamarine;
     filter: invert(42%) sepia(93%) saturate(1500%) hue-rotate(150deg) brightness(60%) contrast(119%);
 }
+
+footer {
+    flex: 0 1 40px;
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+  }
+
+audio::-webkit-media-controls-mute-button,
+
+audio::-webkit-media-controls-play-button{
+    display: none;
+}

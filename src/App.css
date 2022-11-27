@@ -1,12 +1,16 @@
 .App {
-  text-align: center;
   background-color: darkgray;
   background-image: url("components/Images/crinklepaper.png");
+  display: flex;
+  flex-flow: column;
+  height: 100%;
 }
 
 html,
-body {
-  /* overflow-y: hidden; */
+body,
+#root {
+  height: 100%;
+  margin: 0;
 }
 
 .App-logo {
@@ -33,30 +37,20 @@ body {
   color: rgb(112, 76, 182);
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(10px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.columns {
+main {
   display: flex;
   flex-direction: row;
-  /* flex-basis: 100%; */
   flex: 1;
   flex-wrap: wrap;
   padding: 1ch;
-  align-items: center;
   justify-content: center;
   gap: 15%;
   position: relative;
-  min-width: 237px;
+  overflow: scroll;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  overflow: hidden;
 }

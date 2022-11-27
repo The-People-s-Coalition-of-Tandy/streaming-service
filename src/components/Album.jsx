@@ -10,23 +10,23 @@ function Album({ name }) {
   return (
     <div>
       <div className="bgColor">
-                <h1 className="albumName">{name}</h1>
-                <div className="flexWrap">
-                <img
-                className="albumCover"
-                width={100}
-                height={100}
-                src={`./Media/Music/${songs[0].artist}/${songs[0].album}/cover.jpeg`}
-                />
-            <div className="songsFlex">
+        <h1 className="albumName">{name}</h1>
+        <div className="flexWrap">
+          <img
+            className="albumCover"
+            width={100}
+            height={100}
+            src={`./Media/Music/${songs[0].artist}/${songs[0].album}/cover.jpeg`}
+          />
+          <div className="songsFlex">
             {songs.map((song, i) => (
-                <Song key={i} name={song.title} url={song.url} songData={song}>
+              <Song key={i} name={song.title} url={song.url} songData={song}>
                 {song.title}
-                </Song>
+              </Song>
             ))}
-            </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
   );
 }

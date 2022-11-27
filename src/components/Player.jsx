@@ -1,25 +1,65 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { update, selectSong } from "./songSlice";
+import React, { useEffect, useState, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectSong, update } from "./songSlice";
+import { selectQueue, popQueue, addQueueArray } from "./Queue";
+import { data } from "../list.js";
+import * as jsonUtil from "../util.js";
 import "./player.css";
 
 function Player() {
   const currentSong = useSelector(selectSong);
-  const [playing, setPlaying] = useState(currentSong);
+  const queue = useSelector(selectQueue);
+  const dispatch = useDispatch();
+
+  const [songSelected, setSongSelected] = useState(currentSong);
+  const [playing, setPlaying] = useState(false);
+
+  const audioPlayer = useRef();
+
+  const play = () => {
+    if (playing) {
+      audioPlayer.current.pause();
+      setPlaying(false);
+      console.log(queue);
+    } else {
+      audioPlayer.current.play();
+      setPlaying(true);
+    }
+  };
+
+  const playNext = () => {
+    if (queue.length) {
+      if (queue[0] === songSelected) {
+        dispatch(popQueue());
+        dispatch(update(queue[1]));
+      } else {
+        dispatch(update(queue[0]));
+      }
+    } else {
+      const newQueue = jsonUtil.getAllSongs(data);
+      dispatch(addQueueArray(newQueue));
+      dispatch(update(newQueue[0]));
+    }
+    dispatch(popQueue());
+  };
 
   useEffect(() => {
-    setPlaying(currentSong);
+    setSongSelected(currentSong);
+    setPlaying(true);
   }, [currentSong]);
 
   return (
-    <div className="wrapper">
+    <footer className="wrapper">
+      <button onClick={play}>{playing ? <p>Pause</p> : <p>Play</p>}</button>
       <audio
         className="player"
-        src={playing.url}
+        src={songSelected.url}
         controls={true}
         autoPlay={true}
+        ref={audioPlayer}
+        onEnded={playNext}
       ></audio>
-    </div>
+    </footer>
   );
 }
 

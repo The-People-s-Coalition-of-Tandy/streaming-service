@@ -8,7 +8,7 @@ header {
     text-align: left;
     padding: 2rem;
     -webkit-text-stroke: .75px whitesmoke;
-    /* width and color */
+      flex: 0 1 auto;
 }
 
 .flex {

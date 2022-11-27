@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addQueueArray } from "./components/Queue";
 import Album from "./components/Album";
 import { data } from "./list.js";
 import * as jsonUtil from "./util.js";
@@ -10,16 +12,37 @@ import LeftPanel from "./components/LeftPanel";
 function App() {
   const albums = jsonUtil.getAllAlbums(data);
   const artists = jsonUtil.getAllArtists(data);
-  console.log(albums);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(addQueueArray(jsonUtil.getAllSongs(data)));
+  }, []);
 
   return (
     <div className="App">
       <Header />
-      <LeftPanel />
-      <div className="columns">
-      {albums.map((album, i) => (
-        <Album key={i} name={album} />
-      ))}
+      <div className="content">
+        <LeftPanel />
+        <main>
+          {albums.map((album, i) => (
+            <Album key={i} name={album} />
+          ))}
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+          <h1>Hello World</h1>
+        </main>
       </div>
       <Player />
     </div>
