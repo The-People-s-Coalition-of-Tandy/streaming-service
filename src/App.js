@@ -11,7 +11,6 @@ import AlbumsPage from "./components/AlbumsPage";
 import ArtistPage from "./components/ArtistPage";
 import ArtistList from "./components/ArtistList";
 import { selectPage } from "./components/pageSlice";
-import { current } from "immer";
 
 function App() {
   const albums = jsonUtil.getAllAlbums(data);

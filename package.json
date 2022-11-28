@@ -1,5 +1,6 @@
 {
-  "name": "bdsm-redux",
+  "name": "bdsm",
+  "productName": "Blue Dish Soothing Music",
   "version": "0.1.0",
   "private": true,
   "author": "BLUE DISH",
@@ -16,37 +17,27 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "build": {
-    "appId": "com.electron.bluedishsoothingmusic",
-    "productName": "Blue Dish Soothing Music",
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "public"
-    },
-    "mac": {
-      "target": "dmg"
-    },
-    "win": {
-      "target": "nsis"
-    },
-    "linux": {
-      "target": "deb"
-    }
-  },
   "main": "public/electron.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
-    "electron": "wait-on tcp:3000 && electron .",
-    "electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.js",
-    "electron:package:win": "yarn build && electron-builder -w -c.extraMetadata.main=build/electron.js",
-    "electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.js"
+    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js",
+    "preelectron-package": "npm run build"
+  },
+  "homepage": "./",
+  "build": {
+    "appId": "com.julipode.bdsm",
+    "files": ["build/**/*", "node_modules/**/*"],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "icon": "public/logo512.png",
+      "target": []
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -68,8 +59,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "concurrently": "^7.5.0",
-    "electron": "^21.2.3",
+    "concurrently": "^7.6.0",
+    "electron": "^21.3.1",
     "electron-builder": "^23.6.0",
     "eslint": "^8.27.0",
     "eslint-config-airbnb": "^19.0.4",

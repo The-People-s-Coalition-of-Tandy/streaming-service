@@ -1,5 +1,7 @@
 header {
-
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-app-region: drag;
     font-family: TomAndJerry;
     font-size: 1.75rem;
     color: rgb(67, 37, 0);
@@ -8,7 +10,7 @@ header {
     text-align: left;
     padding: 2rem;
     -webkit-text-stroke: .75px whitesmoke;
-      flex: 0 1 auto;
+    flex: 0 1 auto;
 }
 
 .flex {
