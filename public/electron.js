@@ -12,6 +12,8 @@ function createWindow() {
     },
     frame: false,
     icon: __dirname + "/Icon/Icon.icns",
+    show: false,
+    backgroundColor: "#090909",
   });
 
   // and load the index.html of the app.
@@ -25,6 +27,10 @@ function createWindow() {
   if (isDev) {
     win.webContents.openDevTools({ mode: "detach" });
   }
+
+  win.once("ready-to-show", () => {
+    win.show();
+  });
 }
 
 // This method will be called when Electron has finished
