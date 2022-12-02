@@ -21,8 +21,10 @@ function Player() {
       audioPlayer.current.pause();
       setPlaying(false);
     } else {
-      audioPlayer.current.play();
-      setPlaying(true);
+      if (currentSong) {
+        audioPlayer.current.play();
+        setPlaying(true);
+      }
     }
   };
 
@@ -44,14 +46,14 @@ function Player() {
 
   useEffect(() => {
     setSongSelected(currentSong);
-    setPlaying(true);
+    currentSong && setPlaying(true);
   }, [currentSong]);
 
   return (
     <footer>
       <div className="player-left">
         {songSelected && (
-          <div className="flexbox">
+          <div className="flexbox music-preview">
             <img
               width={50}
               height={50}
@@ -67,10 +69,17 @@ function Player() {
 
       <div className="player-center">
         <div className="player-controls">
-          <button onClick={play}>
-            {playing ? <span>Pause</span> : <span>Play</span>}
+          <button className="player-controls__back">◄◄</button>
+          <button className="player-controls__play" onClick={play}>
+            {playing ? (
+              <span className="pause-button">▐▐</span>
+            ) : (
+              <span style={{ fontWeight: "bold" }}>Click to play</span>
+            )}
           </button>
-          <button onClick={playNext}>Next Song</button>
+          <button className="player-controls__next" onClick={playNext}>
+            ►►
+          </button>
         </div>
         <div className="audio-timeline">
           <audio
@@ -80,6 +89,7 @@ function Player() {
             autoPlay={true}
             ref={audioPlayer}
             onEnded={playNext}
+            controlsList={"nodownload"}
           ></audio>
         </div>
       </div>

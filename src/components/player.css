@@ -1,33 +1,43 @@
-.flexbox {
+footer .flexbox {
     display: flex;
 }
 
 .trackInfo {
     flex-direction: column;
     justify-content: center;
+    padding: 0px 10px;
+    font-size: 1.1rem;
 }
- 
 
-/* play button */
-audio::-webkit-media-controls-play-button {
-    /* background-image: url("/Users/elie/Documents/GitHub/PCoTandy/EV1/assets/2.jpeg"); */
-    color: aquamarine;
-    filter: invert(42%) sepia(93%) saturate(1500%) hue-rotate(150deg) brightness(60%) contrast(119%);
+audio {
+    height: 35px;
+    width: 50vw;
+    margin-top: 5px;
+    border-radius: 40%;
+    border: 3px ridge rgb(109, 75, 31);
 }
+
+audio::-webkit-media-controls-panel {
+    background-color: rgb(13, 0, 87);
+    background-image: url(./Images/wood2.png);
+    color: white;
+    padding: 0px 50px;
+    }
 
 footer {
     flex: 0 1 40px;
     background-image: url(./Images/player.gif);
-    /* background-size: 10px; */
     display: flex;
     justify-content: center;
     border-top: 2px ridge rgb(131, 131, 131);
-    padding: 10px 20px 0px 20px;
+    padding: 10px 0px 10px 0px;
     color: white;
     font-weight: bold;
-  }
+}
 
-.player-left,.player-center, .player-right {
+.player-left,
+.player-center,
+.player-right {
     display: flex;
     flex: 1;
     align-items: center;
@@ -36,24 +46,49 @@ footer {
 .player-center {
     justify-content: center;
 }
-.player-left {
-    justify-content: flex-start;
+
+.player-controls {
+    display: grid;
+    grid-template-columns: 50px 150px 50px;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
 }
 
-.player-left img {
-    margin: auto;
+.player-controls > * {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
+
+.player-left .music-preview {
+    background-color: rgba(1, 32, 59, 0.185);
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .player-center {
     justify-content: flex-end;
     flex-direction: column;
 }
 
-.player-controls {
-
+.player-controls button:hover {
+    transform: scale(.95);
 }
 
-audio::-webkit-media-controls-mute-button,
+.player-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+}
 
-audio::-webkit-media-controls-play-button{
+.player-controls {
+    margin-bottom: 5px;
+}
+
+audio::-webkit-media-controls-play-button {
     display: none;
 }
