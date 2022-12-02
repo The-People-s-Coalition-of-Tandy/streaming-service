@@ -38,10 +38,12 @@ export const data = [
 export const artists = [
   {
     name: "BLUE DISH",
-    bio: "BLUE DISH is cool. This is a blurb about BLUE DISH",
+    bio: "Hailing from all over the Globe, BLUE DISH is cool and sweet. Known for their uniquely Soothing Music, they are loved in all corners of the Gloob. Erupting onto the coffeehouse scene with its rookie release BLUE DISH has rocketed to high places. This is a blurb about BLUE DISH",
+    artistImage: "./Media/Music/BLUE DISH/Out of the Blue/cover.jpeg",
   },
   {
     name: "Green Deck",
     bio: "Green Deck is cool. This is a blurb about Green Deck",
+    artistImage: "./Media/Music/BLUE DISH/Out of the Blue/cover.jpeg",
   },
 ];

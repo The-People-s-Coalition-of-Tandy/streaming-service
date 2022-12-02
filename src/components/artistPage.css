@@ -1,3 +1,94 @@
 .artist-container {
     color: white;
 }
+
+.artistImage-container {
+    /* position: absolute; */
+    /* top: 0px;
+    left: 0px; */
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    /* border: 1px ridge whitesmoke; */
+}
+
+.artistImage {
+    width: 100%;
+    height: 100%;
+    opacity: 30%;
+}
+
+.artistName-container {
+    position: relative;
+    text-align: center;
+    /* margin-bottom: 300px; */
+    /* top: -35px; */
+
+}
+
+.artistNameImage {
+    position: absolute;
+    /* top: 200px; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px;
+    height: 200px;
+}
+
+h2 {
+    position: absolute;
+    /* margin: 200px auto 0px -5px; */
+    color: black;
+    font-style: italic;
+    text-align: center;
+    font-family: darling;
+    font-size: 3rem;
+    /* background-color: purple; */
+    /* border: 2px double gray; */
+    padding: .1ch;
+    width: 300px;
+    /* letter-spacing: 0.5ch; */
+    /* background-image: url('./Images/burlap.png'); */
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    background-color: black;
+    border: 2px double gray;
+    /* margin: auto; */
+    margin-top: 17ch;
+    margin-right: 6ch;
+    width: 20%;
+    padding: 1ch;
+    height: 80%;
+    overflow: scroll;
+    font-size: 0.7rem;
+    font-style: oblique;
+    line-height: 1.5em;
+    float: right;
+    color: black;
+    background-image: url('./Images/marble1.png');
+
+}
+
+
+@font-face {
+    font-family: Rascal;
+    src: url(/public/Media/Fonts/RASCAL__.TTF);
+}
+
+
+@font-face {
+    font-family: darling;
+    src: url(/public/Media/Fonts/Darling.ttf);
+}
+
+
+@font-face {
+    font-family: Marnoc;
+    src: url(/public/Media/Fonts/Marnoc.ttf);
+}
