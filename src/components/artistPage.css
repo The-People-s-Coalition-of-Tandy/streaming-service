@@ -23,14 +23,10 @@
 .artistName-container {
     position: relative;
     text-align: center;
-    /* margin-bottom: 300px; */
-    /* top: -35px; */
-
 }
 
 .artistNameImage {
     position: absolute;
-    /* top: 200px; */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 375px;
@@ -57,11 +53,13 @@ h2 {
 }
 
 p {
-    background-color: black;
+    background-color: #606383;
+    background-blend-mode: hard-light;
     border: 2px double gray;
     /* margin: auto; */
-    margin-top: 17ch;
-    margin-right: 6ch;
+    margin-top: 10ch;
+    margin-right: 3ch;
+    box-shadow: 10px 10px 10px black;
     width: 20%;
     padding: 1ch;
     height: 80%;

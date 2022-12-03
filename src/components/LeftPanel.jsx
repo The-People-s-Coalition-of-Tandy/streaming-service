@@ -12,18 +12,19 @@ function LeftPanel() {
       <button
         className="panel-section"
         onClick={() => {
+          dispatch(setPage("Albums"));
+        }}
+      >
+        <span className={page === "Albums" ? "active" : ""}>Home</span>
+      </button>
+
+      <button
+        className="panel-section"
+        onClick={() => {
           dispatch(setPage("AllArtists"));
         }}
       >
         <span className={page === "AllArtists" ? "active" : ""}>Artists</span>
-      </button>
-      <button
-        className="panel-section"
-        onClick={() => {
-          dispatch(setPage("Albums"));
-        }}
-      >
-        <span className={page === "Albums" ? "active" : ""}>Albums</span>
       </button>
     </aside>
   );

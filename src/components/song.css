@@ -1,0 +1,7 @@
+.song {
+    gap: 5px;
+}
+
+.song__play-button {
+    margin-right: 5px;
+}
