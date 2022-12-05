@@ -1,3 +1,25 @@
 .artist-list-container {
     display: block;
+    /* display: grid;
+    grid-template-columns: fr fr fr fr;
+    grid-template-rows: auto; */
+
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 1.5ch;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5ch;
+}
+
+.artistListButton {
+    /* background-color: whitesmoke; */
+    background-image: url("./Images/terracotta.jpeg");
 }

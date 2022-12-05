@@ -46,4 +46,5 @@ export const artists = [
     bio: "Green Deck is cool. This is a blurb about Green Deck",
     artistImage: "./Media/Music/BLUE DISH/Out of the Blue/cover.jpeg",
   },
+  
 ];

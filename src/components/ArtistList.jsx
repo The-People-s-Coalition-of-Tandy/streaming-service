@@ -8,10 +8,14 @@ function ArtistList() {
   const dispatch = useDispatch();
   const artists = getAllArtists();
 
+
+
   return (
     <div className="artist-list-container">
+      <h1>BDSM Artists</h1>
+      <div className="button-container">
       {artists.map((artist, i) => (
-        <button
+        <button className="artistListButton"
           key={i}
           onClick={() => {
             dispatch(setArtist(artist));
@@ -21,6 +25,7 @@ function ArtistList() {
           {artist}
         </button>
       ))}
+      </div>
     </div>
   );
 }
