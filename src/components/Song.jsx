@@ -19,6 +19,7 @@ function Song({ songData }) {
     dispatch(addToQueue(songData));
   }, []);
 
+
   const handleClick = () => {
     if (!playing) {
       dispatch(update(songData));
@@ -26,16 +27,21 @@ function Song({ songData }) {
     }
   };
 
+
   return (
     <div className="flexbox song">
       <button className={"song__play-button"} onClick={handleClick}>
         {playing ? (
-          <span style={{ marginLeft: "-5px" }}>▐▐</span>
-        ) : (
+          <span style={{ marginLeft: "-5px"}}>▐▐</span>
+         ) : (
           <span>►</span>
         )}
       </button>
-      <span>{title}</span>
+      {playing ? (
+        <span style={{backgroundColor: "rgba(255, 255, 255, 0.4)"}}>▐{title}</span>
+         ) : (
+        <span>▐{title}</span>
+        )}
     </div>
   );
 }

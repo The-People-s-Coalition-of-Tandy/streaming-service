@@ -1,5 +1,6 @@
 .artist-container {
     color: white;
+    width: 100%;
 }
 
 .artistImage-container {
@@ -55,6 +56,8 @@ h2 {
 p {
     background-color: #606383;
     background-blend-mode: hard-light;
+    position: absolute;
+    right: 0;
     border: 2px double gray;
     /* margin: auto; */
     margin-top: 10ch;
@@ -67,7 +70,7 @@ p {
     font-size: 0.7rem;
     font-style: oblique;
     line-height: 1.5em;
-    float: right;
+    /* float: right; */
     color: black;
     background-image: url('./Images/marble1.png');
 
