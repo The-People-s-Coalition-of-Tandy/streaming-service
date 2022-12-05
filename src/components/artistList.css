@@ -13,6 +13,18 @@ h1 {
     margin-bottom: 1.5ch;
 }
 
+.artistList {
+    margin: auto;
+    text-align: center;
+    color: whitesmoke;
+    margin: 1.5ch auto 1.5ch auto;
+    background-color: darkred;
+    width: fit-content;
+    border: 2px solid whitesmoke;
+    border-radius: 45%;
+    padding: .5ch;
+}
+
 .button-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -10,14 +10,14 @@ function Header() {
     <header>
       <div className="flex">
         <div className="blueDish">
-          BLUE
+          <span className="bdsm">B</span>LUE
           <br />
-          DISH
+          <span className="bdsm">D</span>ISH
         </div>
         <div className="soothingMusic">
-          Soothing
+        <span className="bdsm">S</span>oothing
           <br />
-          Music
+          <span className="bdsm">M</span>usic
         </div>
       </div>
     </header>

@@ -12,7 +12,7 @@ function ArtistList() {
 
   return (
     <div className="artist-list-container">
-      <h1>BDSM Artists</h1>
+      <h1 className="artistList">Artist List</h1>
       <div className="button-container">
       {artists.map((artist, i) => (
         <button className="artistListButton"
