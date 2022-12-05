@@ -29,10 +29,11 @@
 }
 
 .panel-section:hover {
-    color: white;
+    color: burlywood;
     text-decoration: underline;
 }
 
 .active {
-    color: white;
+    color: red;
+    -webkit-text-stroke: .05px whitesmoke;
 }
