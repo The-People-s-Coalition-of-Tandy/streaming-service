@@ -29,8 +29,8 @@ function Song({ songData }) {
       setPlaying(!playing);
       dispatch(updatePlayer(!playing));
       if (songData !== currentSong) {
+        dispatch(addToPreviousQueue(currentSong));
         dispatch(update(songData));
-        dispatch(addToPreviousQueue(songData));
       }
     },
     10,

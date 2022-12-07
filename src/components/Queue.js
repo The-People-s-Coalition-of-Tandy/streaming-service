@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 export const queueSlice = createSlice({
   name: "queue",
@@ -11,12 +11,16 @@ export const queueSlice = createSlice({
     },
     addToPreviousQueue: (state, action) => {
       if (state.value.previous[0] != action.payload) {
-        console.log(action.payload);
         state.value.previous = [action.payload, ...state.value.previous];
       }
     },
     popQueue: (state) => {
-      state.value.previous = [state.value.next[0], ...state.value.previous];
+      if (current(state.value).previous[0] != current(state.value).next[0]) {
+        console.log("how?");
+        console.log(current(state.value).previous[0]);
+        console.log(current(state.value).next[0]);
+        state.value.previous = [state.value.next[0], ...state.value.previous];
+      }
       state.value.next = state.value.next.slice(1, state.value.next.length);
     },
     popPreviousQueue: (state) => {
