@@ -8,6 +8,7 @@ import {
   popPreviousQueue,
   addQueueArray,
 } from "./Queue";
+import { setArtist, setPage } from "./pageSlice";
 import { data } from "../list.js";
 import * as jsonUtil from "../util.js";
 import "./player.css";
@@ -93,7 +94,14 @@ function Player() {
             />
             <div className="flexbox trackInfo">
               <span>{songSelected.title}</span>
-              <span>{songSelected.artist}</span>
+              <button
+                onClick={() => {
+                  dispatch(setArtist(songSelected.artist));
+                  dispatch(setPage("Artist"));
+                }}
+              >
+                <span>{songSelected.artist}</span>
+              </button>
             </div>
           </div>
         )}

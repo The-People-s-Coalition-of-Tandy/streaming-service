@@ -10,6 +10,20 @@ footer .flexbox {
     white-space: nowrap;
 }
 
+.trackInfo button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding: 0;
+}
+
+.trackInfo button:hover {
+    text-decoration: underline;
+}
+
 audio {
     height: 35px;
     width: 50vw;
