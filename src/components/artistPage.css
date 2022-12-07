@@ -4,15 +4,11 @@
 }
 
 .artistImage-container {
-    /* position: absolute; */
-    /* top: 0px;
-    left: 0px; */
     margin: 0px;
     padding: 0px;
     width: 100%;
     height: 150px;
     overflow: hidden;
-    /* border: 1px ridge whitesmoke; */
 }
 
 .artistImage {
@@ -34,7 +30,7 @@
     height: 200px;
 }
 
-h2 {
+.artistName-container h2 {
     position: absolute;
     /* margin: 200px auto 0px -5px; */
     color: black;
@@ -47,33 +43,74 @@ h2 {
     padding: .1ch;
     width: 300px;
     /* letter-spacing: 0.5ch; */
-    /* background-image: url('./Images/burlap.png'); */
+    /* background-image: ('./Images/burlap.png'); */
     top: -40px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-p {
-    background-color: #606383;
-    background-blend-mode: hard-light;
+.discography-container {
+    margin-top: 7ch;
+}
+
+.artistBio-container {
     position: absolute;
     right: 0;
-    border: 2px double gray;
-    /* margin: auto; */
-    margin-top: 10ch;
-    margin-right: 3ch;
-    box-shadow: 10px 10px 10px black;
-    width: 20%;
-    padding: 1ch;
     height: 80%;
+    width: 20%;
+    margin-top: 5px;
+}
+
+.biography-title {
+    background-image: url("./Images/wood2.png");
+    background-size: 100% 50%;
+    background-position: center;
+    width: 100%;
+    height: 80px;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.discography-title {
+    background-image: url("./Images/artistBg2.png");
+    background-size: 100% 100%;
+    background-position: center;
+    height: 80px;
+    width: fit-content;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin-bottom: 40px;
+}
+
+.biography-title>svg {
+    color: black;
+    white-space: nowrap;
+    width: 100%;
+    font-family: Trattatello, fantasy;
+}
+
+.artistBio {
+    background-color: #606383;
+    /* background-blend-mode: hard-light; */
+    border: 2px double gray;
+    margin-top: 0;
+    box-shadow: 10px 10px 10px black;
+    padding: 1ch;
     overflow: scroll;
     font-size: 0.7rem;
     font-style: oblique;
     line-height: 1.5em;
     /* float: right; */
+    height: 80%;
     color: black;
     background-image: url('./Images/marble1.png');
-
+    background-size: 25%;
 }
 
 

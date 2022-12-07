@@ -7,6 +7,7 @@ footer .flexbox {
     justify-content: center;
     padding: 0px 10px;
     font-size: 1.1rem;
+    white-space: nowrap;
 }
 
 audio {
@@ -22,7 +23,7 @@ audio::-webkit-media-controls-panel {
     background-image: url(./Images/wood2.png);
     color: white;
     padding: 0px 50px;
-    }
+}
 
 footer {
     flex: 0 1 40px;
@@ -55,7 +56,7 @@ footer {
     grid-row-gap: 0px;
 }
 
-.player-controls > * {
+.player-controls>* {
     display: flex;
     flex: 1;
     align-items: center;
@@ -91,4 +92,15 @@ footer {
 
 audio::-webkit-media-controls-play-button {
     display: none;
+}
+
+.player-controls .button-disabled {
+    /* pointer-events: none; */
+    /* filter: brightness(50%); */
+    color: rgb(161, 161, 161);
+    cursor: not-allowed;
+}
+
+.player-controls .button-disabled:hover {
+    transform: none;
 }

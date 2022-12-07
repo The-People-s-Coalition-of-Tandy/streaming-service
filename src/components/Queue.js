@@ -3,27 +3,48 @@ import { createSlice } from "@reduxjs/toolkit";
 export const queueSlice = createSlice({
   name: "queue",
   initialState: {
-    value: [],
+    value: { previous: [], next: [] },
   },
   reducers: {
     addToQueue: (state, action) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value = [...state.value, action.payload];
+      state.value.next = [...state.value.next, action.payload];
+    },
+    addToPreviousQueue: (state, action) => {
+      if (state.value.previous[0] != action.payload) {
+        console.log(action.payload);
+        state.value.previous = [action.payload, ...state.value.previous];
+      }
     },
     popQueue: (state) => {
-      state.value = state.value.slice(1, state.value.length);
+      state.value.previous = [state.value.next[0], ...state.value.previous];
+      state.value.next = state.value.next.slice(1, state.value.next.length);
+    },
+    popPreviousQueue: (state) => {
+      if (
+        state.value.next.length &&
+        state.value.previous[0] !== state.value.next[0]
+      ) {
+        state.value.next = [state.value.previous[0], ...state.value.next];
+      }
+      state.value.previous = state.value.previous.slice(
+        1,
+        state.value.previous.length
+      );
     },
     addQueueArray: (state, action) => {
-      state.value = [...state.value, ...action.payload];
+      state.value.next = [...state.value.next, ...action.payload];
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToQueue, addQueueArray, popQueue } = queueSlice.actions;
+export const {
+  addToQueue,
+  addToPreviousQueue,
+  addQueueArray,
+  popQueue,
+  popPreviousQueue,
+} = queueSlice.actions;
 export const selectQueue = (state) => state.queue.value;
 
 export default queueSlice.reducer;

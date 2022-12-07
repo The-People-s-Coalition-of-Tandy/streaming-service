@@ -1,14 +1,22 @@
 import React, { useEffect, useState, useRef } from "react";
+import useDebounce from "../hooks/useDebounce";
 import { useSelector, useDispatch } from "react-redux";
 import { selectSong, update } from "./songSlice";
-import { selectQueue, popQueue, addQueueArray } from "./Queue";
+import { selectPlaying, updatePlayer } from "./playingSlice";
+import {
+  selectQueue,
+  popQueue,
+  popPreviousQueue,
+  addQueueArray,
+} from "./Queue";
 import { data } from "../list.js";
 import * as jsonUtil from "../util.js";
 import "./player.css";
 
 function Player() {
   const currentSong = useSelector(selectSong);
-  const queue = useSelector(selectQueue);
+  const { next, previous } = useSelector(selectQueue);
+  const playingState = useSelector(selectPlaying);
   const dispatch = useDispatch();
 
   const [songSelected, setSongSelected] = useState(currentSong);
@@ -20,21 +28,23 @@ function Player() {
     if (playing) {
       audioPlayer.current.pause();
       setPlaying(false);
+      dispatch(updatePlayer(false));
     } else {
       if (currentSong) {
         audioPlayer.current.play();
         setPlaying(true);
+        dispatch(updatePlayer(true));
       }
     }
   };
 
   const playNext = () => {
-    if (queue.length) {
-      if (queue[0] === songSelected) {
+    if (next.length) {
+      if (next[0] === songSelected) {
         dispatch(popQueue());
-        dispatch(update(queue[1]));
+        dispatch(update(next[1]));
       } else {
-        dispatch(update(queue[0]));
+        dispatch(update(next[0]));
       }
     } else {
       const newQueue = jsonUtil.getAllSongs(data);
@@ -44,10 +54,33 @@ function Player() {
     dispatch(popQueue());
   };
 
+  const playPrevious = () => {
+    if (previous.length) {
+      if (previous[0] === songSelected && previous.length > 1) {
+        dispatch(popPreviousQueue());
+        dispatch(update(previous[1]));
+      } else {
+        dispatch(update(previous[0]));
+      }
+      dispatch(popPreviousQueue());
+    }
+  };
+
   useEffect(() => {
     setSongSelected(currentSong);
     currentSong && setPlaying(true);
   }, [currentSong]);
+
+  useEffect(() => {
+    setPlaying(playingState);
+    if (playingState) {
+      audioPlayer.current.play();
+      setPlaying(true);
+    } else {
+      audioPlayer.current.pause();
+      setPlaying(false);
+    }
+  }, [playingState]);
 
   return (
     <footer>
@@ -69,7 +102,14 @@ function Player() {
 
       <div className="player-center">
         <div className="player-controls">
-          <button className="player-controls__back">◄◄</button>
+          <button
+            className={`player-controls__back ${
+              previous.length === 0 ? "button-disabled" : ""
+            }`}
+            onClick={playPrevious}
+          >
+            ◄◄
+          </button>
           <button className="player-controls__play" onClick={play}>
             {playing ? (
               <span className="pause-button">▐▐</span>

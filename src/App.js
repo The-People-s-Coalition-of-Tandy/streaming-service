@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addQueueArray } from "./components/Queue";
 import { data } from "./list.js";
@@ -7,16 +7,14 @@ import "./App.css";
 import Player from "./components/Player";
 import Header from "./components/Header";
 import LeftPanel from "./components/LeftPanel";
-import AlbumsPage from "./components/AlbumsPage";
+import HomePage from "./components/HomePage";
 import ArtistPage from "./components/ArtistPage";
 import ArtistList from "./components/ArtistList";
 import { selectPage } from "./components/pageSlice";
 
 function App() {
   const albums = jsonUtil.getAllAlbums(data);
-  // const artists = jsonUtil.getAllArtists(data);
   const currentPage = useSelector(selectPage);
-  // const [showPage, setShowPage] = useState("Albums");
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -25,15 +23,15 @@ function App() {
 
   const routePage = () => {
     switch (currentPage.page) {
-      case "Albums":
-        return <AlbumsPage albums={albums} />;
+      case "Home":
+        return <HomePage albums={albums} />;
         break;
       case "Artist":
         return <ArtistPage artist={currentPage.artist} />;
       case "AllArtists":
         return <ArtistList />;
       default:
-        return <AlbumsPage albums={albums} />;
+        return <HomePage albums={albums} />;
         break;
     }
   };

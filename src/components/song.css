@@ -1,7 +1,26 @@
 .song {
     gap: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.song > span {
+    border-left: 2px solid whitesmoke;
+    padding-left: 5px;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(19, 66, 194, 0.418) , rgba(0, 0, 255, 0));
+    padding: 2px 5px;
+
+}
+
+.song:hover > span {
+    background-image: linear-gradient(to right, rgb(19, 66, 194) , rgba(0, 0, 255, 0));
+
 }
 
 .song__play-button {
-    margin-right: 5px;
+    margin-right: 2px;
+    font-size: 8pt;
+    padding: 2px 4px;
 }

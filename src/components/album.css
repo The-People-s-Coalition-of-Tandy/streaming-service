@@ -44,7 +44,7 @@
 }
 
 @font-face {
-    font-family: Auto;
+    font-family: tes;
     src: url(/public/Media/Fonts/Autography.otf);
 }
 
@@ -63,15 +63,34 @@
     font-size: 3.5rem;
     font-family: Romantic;
     color: silver;
-    /* margin: auto; */
-    text-align: center;
+    margin: auto;
+    /* margin-left: 20px; */
+
+    text-align: left;
+}
+
+.album__artist-name {
+    color: silver;
+    font-family: AG5;
+    font-weight: bold;
+    margin: 0;
+    cursor: pointer;
+}
+
+.album__artist-name:hover {
+    filter: brightness(120%);
+}
+
+.album__artist-name-button {
+    background: none;
+    border: none;
+    margin: 0 0 20px 0;
+
 }
 
 .albumCover {
     border: 5px groove lightskyblue;
     filter: drop-shadow(0 0 0.5rem whitesmoke);
-
-    /* filter: drop-shadow(0 0 0.75rem rgb(8, 0, 97)); */
 }
 
 .flexWrap {
@@ -82,12 +101,11 @@
     flex-direction: row;
     flex-basis: 100%;
     flex: 1;
-    padding: 1ch;
 }
 
 .bgColor {
     width: fit-content;
-    margin: 70px auto auto auto;
+    margin: 0 50px;
 }
 
 .songsFlex {
@@ -96,7 +114,7 @@
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-    gap: 5px;
+    gap: 2px;
     /* margin: 1ch; */
     height: 100px;
     color: aliceblue;

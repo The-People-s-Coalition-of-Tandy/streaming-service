@@ -91,5 +91,6 @@ button {
 .albums-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }

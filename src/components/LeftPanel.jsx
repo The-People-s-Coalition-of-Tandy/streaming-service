@@ -12,10 +12,10 @@ function LeftPanel() {
       <button
         className="panel-section"
         onClick={() => {
-          dispatch(setPage("Albums"));
+          dispatch(setPage("Home"));
         }}
       >
-        <span className={page === "Albums" ? "active" : ""}>Home</span>
+        <span className={page === "Home" ? "active" : ""}>Home</span>
       </button>
 
       <button

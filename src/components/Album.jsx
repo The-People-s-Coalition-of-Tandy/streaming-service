@@ -15,6 +15,15 @@ function Album({ name }) {
     <div>
       <div className="bgColor">
         <h1 className="albumName">{name}</h1>
+        <button
+          onClick={() => {
+            dispatch(setArtist(songs[0].artist));
+            dispatch(setPage("Artist"));
+          }}
+          className="album__artist-name-button"
+        >
+          <h2 className="album__artist-name">{songs[0].artist}</h2>
+        </button>
         <div className="flexWrap">
           <button
             className="artist-link"

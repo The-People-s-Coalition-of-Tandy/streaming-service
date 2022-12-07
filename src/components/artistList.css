@@ -1,9 +1,6 @@
 .artist-list-container {
     display: block;
-    /* display: grid;
-    grid-template-columns: fr fr fr fr;
-    grid-template-rows: auto; */
-
+    width: 100%;
 }
 
 h1 {
@@ -13,7 +10,7 @@ h1 {
     margin-bottom: 1.5ch;
 }
 
-.artistList {
+.artist-list-title {
     margin: auto;
     text-align: center;
     color: darkred;
@@ -22,7 +19,7 @@ h1 {
     width: fit-content;
     border: 2px solid darkred;
     border-radius: 45%;
-    padding: .5ch;
+    padding: .75ch 2ch;
 }
 
 .button-container {
@@ -33,8 +30,17 @@ h1 {
 }
 
 .artistListButton {
-    /* background-color: whitesmoke; */
+    padding: .75ch 1.5ch;
+    font-size: 1.75rem;
+    font-weight: bold;
     background-image: url("./Images/terracotta.jpeg");
     color: whitesmoke;
-    border: 2px solid darkred;
+    -webkit-text-stroke: 1px rgb(0, 14, 139);
+    border: 2px outset darkred;
+    white-space: nowrap;
+}
+
+.artistListButton:hover {
+    border-style: inset;
+    filter: brightness(90%);
 }

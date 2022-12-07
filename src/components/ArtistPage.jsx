@@ -21,9 +21,30 @@ function ArtistPage({ artist }) {
         <h2 className="artistName">{artistData.name}</h2>
       </div>
 
-      <p className="artistBio">{artistData.bio}</p>
-      <div></div>
-      {albums && albums.map((album, i) => <Album key={i} name={album} />)}
+      <div className="artistBio-container">
+        <div className="biography-title">
+          {/* <h2>Meet The Artist</h2> */}
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 500 75"
+            preserveAspectRatio="xMinYMid meet"
+          >
+            <text x="40" y="65" fontSize="75" fill="black">
+              Meet The Artist
+            </text>
+          </svg>
+        </div>
+
+        <p className="artistBio">{artistData.bio}</p>
+      </div>
+
+      <div className="discography-container">
+        {/* <div className="discography-title">
+          <h2>Discography</h2>
+        </div> */}
+        {albums && albums.map((album, i) => <Album key={i} name={album} />)}
+      </div>
     </div>
   );
 }
