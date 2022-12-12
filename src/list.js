@@ -26,12 +26,101 @@ export const data = [
     album: "Out of the Blue",
     url: "./Media/Music/BLUE DISH/Out of the Blue/4. Fantasie-Worlde in Blue.mp3",
   },
-
   {
-    title: "1",
+    title: "Elizabeth",
+    artist: "BLUE DISH",
+    album: "Into the Blue",
+    url: "./Media/Music/BLUE DISH/Out of the Blue/1. Blue mist.mp3",
+  },
+  {
+    title: "Into the Blue",
+    artist: "BLUE DISH",
+    album: "Into the Blue",
+    url: "./Media/Music/BLUE DISH/Out of the Blue/1. Blue mist.mp3",
+  },
+  {
+    title: "Nothin' Blue to You",
+    artist: "BLUE DISH",
+    album: "Into the Blue",
+    url: "./Media/Music/BLUE DISH/Out of the Blue/1. Blue mist.mp3",
+  },
+  {
+    title: "Neptune (Ends in Blue)",
+    artist: "BLUE DISH",
+    album: "Into the Blue",
+    url: "./Media/Music/BLUE DISH/Out of the Blue/1. Blue mist.mp3",
+  },
+  {
+    title: "Fast Times",
     artist: "Green Deck",
-    album: "Album 1",
-    url: "./Media/Music/Green Deck/Album 1/1.mp3",
+    album: "World Cafe",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Fast Times",
+    artist: "Green Deck",
+    album: "Heaven",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Slow Times",
+    artist: "Green Deck",
+    album: "Veritasio",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Slow Times",
+    artist: "Green Deck",
+    album: "Veritasio",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Slow Times",
+    artist: "Green Deck",
+    album: "Veritasio",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Slow Times",
+    artist: "Green Deck",
+    album: "Veritasio",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Slow Times",
+    artist: "Green Deck",
+    album: "Veritasio",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Slow Times",
+    artist: "Green Deck",
+    album: "Veritasio",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Pressure Building",
+    artist: "Green Deck",
+    album: "To a Friend",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Slow Times",
+    artist: "Green Deck",
+    album: "Veritasio",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Unforgettable",
+    artist: "Green Deck",
+    album: "Slowly",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
+  },
+  {
+    title: "Unforgettable",
+    artist: "Green Deck",
+    album: "Slowly",
+    url: "./Media/Music/Green Deck/World/Cafe/1.mp3",
   },
 ];
 
@@ -46,5 +135,4 @@ export const artists = [
     bio: "Green Deck is cool. This is a blurb about Green Deck",
     artistImage: "./Media/Music/BLUE DISH/Out of the Blue/cover.jpeg",
   },
-  
 ];

@@ -92,5 +92,6 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: start;
+  gap: 3ch 0ch;
 }

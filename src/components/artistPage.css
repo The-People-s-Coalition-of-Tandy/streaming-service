@@ -51,6 +51,9 @@
 
 .discography-container {
     margin-top: 7ch;
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
 }
 
 .artistBio-container {

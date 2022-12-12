@@ -114,16 +114,17 @@
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-    gap: 2px;
-    /* margin: 1ch; */
-    height: 100px;
+    height: 110px;
     color: aliceblue;
     white-space: nowrap;
-    /* background-color: aqua; */
     padding: 5px;
     flex-wrap: nowrap;
-    /* overflow-y: scroll; */
     width: fit-content;
+    overflow-y: scroll;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    padding-bottom: 20px;
 }
 
 .artist-link {
