@@ -1,12 +1,14 @@
 import React from "react";
 import { getAllArtists } from "../util";
 import { useDispatch, useSelector } from "react-redux";
+import { selectData } from "./dataSlice";
 import { setPage, setArtist } from "./pageSlice";
 import "./artistList.css";
 
 function ArtistList() {
   const dispatch = useDispatch();
-  const artists = getAllArtists();
+  const data = useSelector(selectData)
+  const artists = getAllArtists(data.artists);
 
   return (
     <div className="artist-list-container">

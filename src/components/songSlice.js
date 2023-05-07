@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { data } from "../list";
 
 export const songSlice = createSlice({
   name: "currentSong",
   initialState: {
-    value: data[0],
+    value: "",
   },
   reducers: {
     update: (state, action) => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { selectData } from "../components/dataSlice";
 import { selectSong, update } from "./songSlice";
 import { selectPlaying, updatePlayer } from "./playingSlice";
 import {
@@ -9,14 +10,17 @@ import {
   addQueueArray,
 } from "./Queue";
 import { setArtist, setPage } from "./pageSlice";
-import { data } from "../list.js";
 import * as jsonUtil from "../util.js";
 import "./player.css";
 
 function Player() {
+
   const currentSong = useSelector(selectSong);
   const { next, previous } = useSelector(selectQueue);
   const playingState = useSelector(selectPlaying);
+  const data = useSelector(selectData);
+
+
   const dispatch = useDispatch();
 
   const [songSelected, setSongSelected] = useState(currentSong);
@@ -47,7 +51,7 @@ function Player() {
         dispatch(update(next[0]));
       }
     } else {
-      const newQueue = jsonUtil.getAllSongs(data);
+      const newQueue = jsonUtil.getAllSongs(data.albums);
       dispatch(addQueueArray(newQueue));
       dispatch(update(newQueue[0]));
     }
@@ -90,7 +94,7 @@ function Player() {
             <img
               width={50}
               height={50}
-              src={`./Media/Music/${songSelected.artist}/${songSelected.album}/cover.jpeg`}
+              src={songSelected.cover}
             />
             <div className="flexbox trackInfo">
               <span>{songSelected.title}</span>

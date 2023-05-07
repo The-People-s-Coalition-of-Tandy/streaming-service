@@ -1,5 +1,5 @@
 {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "beautify.ignore": "",
     // Enable/disable default JavaScript formatter (For Prettier)
     "javascript.format.enable": false,
@@ -9,6 +9,7 @@
         "source.fixAll.eslint": true
     },
     "eslint.validate": [
-        "javascript"
+        "javascript",
+        "react"
     ],
 }

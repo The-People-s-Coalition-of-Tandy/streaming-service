@@ -1,6 +1,4 @@
 import React from "react";
-// import { data } from '../list.js';
-// import * as jsonUtil from '../util.js';
 import "./header.css";
 
 function Header() {

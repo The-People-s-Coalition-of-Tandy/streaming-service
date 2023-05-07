@@ -1,6 +1,5 @@
-import { data as library } from "./list";
-
 export function getAllAlbums(json) {
+  // console.log(json);
   const albums = [];
   for (let i = 0; i < json.length; i++) {
     if (albums.indexOf(json[i].album) === -1) {
@@ -11,26 +10,24 @@ export function getAllAlbums(json) {
   return albums;
 }
 
-export function getAllArtists() {
+export function getAllArtists(data) {
   const artists = [];
 
-  for (let i = 0; i < library.length; i++) {
-    if (artists.indexOf(library[i].artist) === -1) {
-      artists.push(library[i].artist);
-    }
+  for (let i = 0; i < data.length; i++) {
+    artists.push(data[i].name);
   }
 
   return artists;
 }
 
-export function getAlbumsByArtist(artist) {
+export function getAlbumsByArtist(artist, data) {
   const albums = [];
-  for (let i = 0; i < library.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     if (
-      albums.indexOf(library[i].album) === -1 &&
-      library[i].artist === artist
+      albums.indexOf(data[i].album) === -1 &&
+      data[i].artist === artist
     ) {
-      albums.push(library[i].album);
+      albums.push(data[i].album);
     }
   }
 

@@ -1,14 +1,19 @@
 import React from "react";
-import { artists } from "../list.js";
 import { getAlbumsByArtist } from "../util";
+import { useSelector } from "react-redux";
+import { selectData } from "../components/dataSlice";
 import Album from "./Album";
 import "./artistPage.css";
 
 function ArtistPage({ artist }) {
+
+  const {albums, artists} = useSelector(selectData);
+
   const artistData = artists.filter((obj) => {
     return obj.name === artist;
   })[0];
-  const albums = getAlbumsByArtist(artist);
+
+  const artistAlbums = getAlbumsByArtist(artist, albums);
 
   return (
     <div className="artist-container">
@@ -43,7 +48,7 @@ function ArtistPage({ artist }) {
         {/* <div className="discography-title">
           <h2>Discography</h2>
         </div> */}
-        {albums && albums.map((album, i) => <Album key={i} name={album} />)}
+        {artistAlbums && artistAlbums.map((album, i) => <Album key={i} name={album} />)}
       </div>
     </div>
   );

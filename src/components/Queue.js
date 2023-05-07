@@ -16,9 +16,6 @@ export const queueSlice = createSlice({
     },
     popQueue: (state) => {
       if (current(state.value).previous[0] != current(state.value).next[0]) {
-        console.log("how?");
-        console.log(current(state.value).previous[0]);
-        console.log(current(state.value).next[0]);
         state.value.previous = [state.value.next[0], ...state.value.previous];
       }
       state.value.next = state.value.next.slice(1, state.value.next.length);

@@ -1,15 +1,16 @@
 import React from "react";
-import { data } from "../list.js";
 import * as jsonUtil from "../util.js";
 import Song from "./Song.jsx";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectData } from "../components/dataSlice";
 import { setPage, setArtist } from "./pageSlice";
 import "./album.css";
 
 function Album({ name }) {
   const dispatch = useDispatch();
+  const data = useSelector(selectData);
 
-  const songs = jsonUtil.getAlbum(data, name);
+  const songs = jsonUtil.getAlbum(data.albums, name);
 
   return (
     <div>
@@ -36,7 +37,7 @@ function Album({ name }) {
               className="albumCover"
               width={100}
               height={100}
-              src={`./Media/Music/${songs[0].artist}/${songs[0].album}/cover.jpeg`}
+              src={songs[0].cover}
             />
           </button>
           <div className="songsFlex">
