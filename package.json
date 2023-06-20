@@ -30,7 +30,7 @@
   },
   "homepage": "./",
   "build": {
-    "appId": "com.julipode.bdsm",
+    "appId": "org.pcotandy.bluedishsoothingmusic",
     "files": [
       "build/**/*",
       "node_modules/**/*"
