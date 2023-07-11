@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import LeftPanel from "./components/LeftPanel";
 import HomePage from "./components/HomePage";
 import ArtistPage from "./components/ArtistPage";
+import ErrorPage from "./components/ErrorPage";
 import ArtistList from "./components/ArtistList";
 import { selectPage } from "./components/pageSlice";
 import { useGetAllSongsQuery } from './components/apiSlice';
@@ -17,6 +18,7 @@ import { selectData } from "./components/dataSlice";
 function App() {
 
   const { data } = useGetAllSongsQuery();
+
   const currentPage = useSelector(selectPage);
 
   const dataReady = useSelector(selectData)
@@ -28,7 +30,6 @@ function App() {
     if (data) {
       dispatch(updateData(data));
       dispatch(addQueueArray(jsonUtil.getAllSongs(data.albums)));
-      console.log(data);
     }
   }, [data]);
 
@@ -57,6 +58,9 @@ function App() {
       </div>
       <Player />
       </>
+      }
+      {!dataReady && 
+      <ErrorPage />
       }
     </div>
   );

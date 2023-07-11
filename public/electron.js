@@ -11,7 +11,7 @@ function createWindow() {
       nodeIntegration: true,
     },
     frame: false,
-    icon: __dirname + "/Icon/Icon.icns",
+    icon: __dirname + "../scripts/icons/icon.icns",
     show: false,
     backgroundColor: "#090909",
   });

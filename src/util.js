@@ -1,5 +1,4 @@
 export function getAllAlbums(json) {
-  // console.log(json);
   const albums = [];
   for (let i = 0; i < json.length; i++) {
     if (albums.indexOf(json[i].album) === -1) {

@@ -1,10 +1,9 @@
 {
-  "name": "bdsm",
-  "productName": "Blue Dish Soothing Music",
-  "version": "0.1.0",
-  "private": true,
-  "author": "BLUE DISH",
-  "description": "Blue Dish Soothing Music",
+  "name": "bluedishsoothingmusic",
+  "productName": "BLUE DiSH Soothing Music",
+  "version": "1.0.0",
+  "author": "BLUE DiSH",
+  "description": "BLUE DiSH Soothing Music streaming service",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
@@ -25,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js",
+    "electron-package": "./scripts/build.sh",
     "preelectron-package": "npm run build"
   },
   "homepage": "./",
@@ -39,8 +38,17 @@
       "buildResources": "assets"
     },
     "mac": {
-      "icon": "public/logo512.png",
-      "target": []
+      "target": [
+        {
+          "target": "mas",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "icon": "./scripts/icons/icon.icns",
+      "extendInfo": "./scripts/mas.info.plist",
+      "type": "distribution"
     }
   },
   "eslintConfig": {

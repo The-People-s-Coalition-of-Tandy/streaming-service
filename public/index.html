@@ -27,22 +27,53 @@
     .splash-screen {
       width: 100vw;
       height: 100vh;
-      background-image: url("./Media/crinklepaper.png");
+      background: black;
       z-index: 9999;
+      background-image: url(./Media/Images/driftwood2.png);
+      background-size: cover;
       position: absolute;
       display: flex;
       justify-content: center;
       align-items: center;
-      animation: fade ease-in .1s 3.75s forwards;
+      animation: fade ease-in 4s forwards;
       pointer-events: none;
     }
 
+    .splash-screen-container {
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: 9998;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fade-quick ease-in .1s 3s forwards;
+      pointer-events: none;
+    }
+
+    .splash-screen video {
+      height: 75% !important;
+      border-radius: 500px;
+      border: 10px ridge rgb(0, 1, 72);
+    }
+
+    @keyframes fade-quick {
+      from {opacity: 1;}
+      to {opacity: 0;}
+    }
+
     @keyframes fade {
-      from {
+      0% {
+        opacity: 0;
+      }
+
+      5%,
+      93% {
         opacity: 1;
       }
 
-      to {
+      100% {
         opacity: 0;
       }
     }
@@ -53,7 +84,8 @@
       /* filter: url("#displacement-spin"); */
 
     }
-    body{
+
+    body {
       filter: url("#displacement-filter");
     }
   </style>
@@ -62,7 +94,12 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <audio src="boot2VerbDelay.mp3" autoplay hidden></audio>
+  <div class="splash-screen-container">
+  </div>
   <div class="splash-screen">
+    <video autoplay muted src="splash_crf35.mp4"></video>
+  </div>
+  <!-- <div class="splash-screen">
     <svg preserveAspectRatio="none" width="100%" height="100%" style="visibility: invisible; position: absolute;">
       <defs>
         <filter preserveAspectRatio="none" id="displacement-filter" width="100%" height="100%" x="0" y="0" filterUnits="userSpaceOnUse"
@@ -86,7 +123,7 @@
       </defs>
     </svg>
     <img src="./logo512.png" class="filter" />
-  </div>
+  </div> -->
   <div id="root">
   </div>
   <!--

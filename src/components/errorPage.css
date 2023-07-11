@@ -1,0 +1,53 @@
+.error-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/public/Media/Images/driftwood2.png);
+    background-size: cover;
+}
+
+.error-modal {
+    max-height: 500px;
+    max-width: 500px;
+    height: 75vh;
+    width: 75vh;
+    background-image: url('/public/Media/crinklepaper.png');
+    border-radius: 500px;
+    border: 10px ridge rgb(100, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-header {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+
+.error-message-modal {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.error-message {
+    font-size: large;
+    font-family: monospace;
+    color: whitesmoke;
+}
+
+.refresh-button {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 500px;
+    cursor: pointer;
+}
